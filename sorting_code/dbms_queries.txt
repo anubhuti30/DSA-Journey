@@ -1,0 +1,40 @@
+create database employee;
+use employee;
+CREATE table employee1
+(
+	empID			VARCHAR(10),
+    empName			VARCHAR(30),
+    empAge			INTEGER,
+    empSalary		DECIMAL(10,2)
+);
+DESC employee1;
+INSERT INTO employee1
+VALUES ('1001', 'Anu', 21, 8000);
+INSERT INTO employee1
+VALUES ('1002','Aaru',13,9090);
+INSERT INTO employee1
+VALUES ('1003','Aadi',21,9000);
+INSERT INTO employee1
+VALUES ('1004','Ashu',22,6500);
+SELECT * from employee1;
+SELECT empName,empAge FROM employee1;
+SELECT empName FROM employee1 WHERE empsalary>8000;
+SELECT empName,empAge From employee1 WHERE empsalary=8000;
+SELECT * FROM employee1 WHERE empName='Aaru';
+SELECT * FROM employee1 WHERE empage>=20;
+SELECT * FROM employee1 WHERE empAge>=21 OR empSalary>9500;
+SELECT * FROM employee1 WHERE (empAge<>21);
+SELECT * FROM employee1 WHERE empAge BETWEEN 19 AND 24;
+SELECT * FROM employee1 WHERE empSalary BETWEEN 7000 AND 9000;
+SELECT * FROM employee1 WHERE empAge IN(13,22);
+SELECT * FROM employee1 WHERE empName LIKE('A%');
+SELECT * FROM employee1 WHERE empName LIKE'%A';
+SELECT * FROM employee1 WHERE empName LIKE'%A%';
+SELECT * FROM employee1 WHERE empName LIKE 'A_';
+SELECT empName FROM employee1 WHERE empSalary IS NULL;
+INSERT INTO employee1
+VALUES('1005','anvi',NULL,NULL);
+SELECT empName FROM employee1 WHERE empSalary IS NOT NULL;
+SELECT empName,empSalary FROM employee1 order by empSalary ASC;
+SELECT * FROM employee1;
+SELECT empAge FROM employee1 ORDER BY empAge DESC;
